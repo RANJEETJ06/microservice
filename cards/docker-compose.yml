@@ -1,0 +1,37 @@
+services:
+  cards:
+    image: "ranjeetjena06/cards:v1"
+    container_name: cards_ms
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - learn
+  loans:
+    image: "ranjeetjena06/loans:v1"
+    container_name: loans_ms
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - learn
+  accounts:
+    image: "ranjeetjena06/accounts:v1"
+    container_name: accounts_ms
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - learn
+networks:
+  learn:
+    driver: "bridge"

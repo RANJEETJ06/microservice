@@ -1,0 +1,95 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: accounts
+  profiles:
+    active: prod
+
+  # ---- DataSource / JPA ----
+  datasource:
+    url: jdbc:mysql://localhost:3308/accountsdb
+    username: root
+    password: root
+  sql:
+    init:
+      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  # ---- Config Server ----
+  config:
+    import: "configserver:http://configserver-ms:8071/"
+
+  # ---- RabbitMQ ----
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+    function:
+      definition: updateCommunication
+      stream:
+        bindings:
+          updateCommunication-in-0:
+            destination: communication-sent
+            group: accounts
+          sendCommunication-out-0:
+            destination: send-communication
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+    health:
+      probes:
+        enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eurekaserver-ms:8070/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+info:
+  app:
+    name: "accounts"
+    description: "learn API for accounts"
+    version: "1.1.0"
+
+#optional
+logging:
+  level:
+    com:
+      learn:
+        accounts: DEBUG
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      sliding-window-size: 10
+      permitted-number-of-calls-in-half-open-state: 2
+      failure-rate-threshold: 50
+      wait-duration-in-open-state:
+        seconds: 10

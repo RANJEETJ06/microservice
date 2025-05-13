@@ -1,0 +1,89 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: cards
+
+  # ---- DataSource / JPA ----
+  datasource:
+    url: jdbc:mysql://localhost:3307/cardsdb
+    username: root
+    password: root
+  sql:
+    init:
+      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  # ---- Config Server ----
+  config:
+    import: "configserver:http://configserver-ms:8071/"
+
+  # ---- RabbitMQ ----
+  rabbitmq:
+    host: rabbit
+    port: 5672
+    username: guest
+    password: guest
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
+  endpoint:
+    shutdown:
+      access: unrestricted
+    health:
+      probes:
+        enabled: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://eurekaserver-ms:8070/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+
+info:
+  app:
+    name: "cards"
+    description: "learn API for cards"
+    version: "1.1.0"
+#optional
+logging:
+  level:
+    com:
+      learn:
+        cards: DEBUG
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      sliding-window-size: 10
+      permitted-number-of-calls-in-half-open-state: 2
+      failure-rate-threshold: 50
+      wait-duration-in-open-state:
+        seconds: 5
+resilience4j.retry:
+  configs:
+    default:
+      max-attempts: 3
+      wait-duration:
+        seconds: 5
+      exponential-backoff-multiplier: 2
+      enable-exponential-backoff: true
+
+

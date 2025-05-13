@@ -1,0 +1,310 @@
+version: '3.8'
+
+x-base-env: &base-env
+  SPRING_RABBITMQ_HOST: "rabbit"
+  SPRING_PROFILES_ACTIVE: qa
+  SPRING_CLOUD_CONFIG_URI: "http://configserver-ms:8071/"
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.2.2
+    container_name: keycloak
+    command: start-dev
+    ports:
+      - "7080:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    deploy:  
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+  rabbit:
+    image: rabbitmq:4.0-management
+    container_name: rabbit
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_port_connectivity"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+    networks:
+      - learn
+
+  loansdb:
+    image: mysql:latest
+    container_name: loansdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: loansdb
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+  cardsdb:
+    image: mysql:latest
+    container_name: cardsdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cardsdb
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+  accountsdb:
+    image: mysql:latest
+    container_name: accountsdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: accountsdb
+    ports:
+      - "3308:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+  configserver:
+    image: "ranjeetjena06/configserver:v2"
+    container_name: configserver-ms
+    ports:
+      - "8071:8071"
+    depends_on:
+      rabbit:
+        condition: service_healthy
+      loansdb:
+        condition: service_healthy
+      cardsdb:
+        condition: service_healthy
+      accountsdb:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://localhost:8071/actuator/health/readiness | grep UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    environment:
+      SPRING_RABBITMQ_HOST: "rabbit"
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+    networks:
+      - learn
+
+  eurekaserver:
+    image: "ranjeetjena06/eurekaserver:v1"
+    container_name: eurekaserver-ms
+    ports:
+      - "8070:8070"
+    depends_on:
+      configserver:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://localhost:8070/actuator/health/readiness | grep UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    environment:
+      <<: *base-env
+      SPRING_APPLICATION_NAME: "eurekaserver"
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+    networks:
+      - learn
+
+  loans:
+    image: "ranjeetjena06/loans:v6"
+    container_name: loans-ms
+    # ports:
+    #   - "8090:8090"
+    command: /bin/sh -c "sleep 20 && java -jar loans.jar"
+    depends_on:
+      redis:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+    environment:
+      <<: *base-env
+      SPRING_APPLICATION_NAME: "loans"
+      SPRING_DATASOURCE_URL: jdbc:mysql://loansdb:3306/loansdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver-ms:8070/eureka/
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://localhost:8090/actuator/health/readiness | grep UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+  cards:
+    image: "ranjeetjena06/cards:v6"
+    container_name: cards-ms
+    # ports:
+    #   - "9000:9000"
+    command: /bin/sh -c "sleep 30 && java -jar cards.jar"
+    depends_on:
+      redis:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+    environment:
+      <<: *base-env
+      SPRING_APPLICATION_NAME: "cards"
+      SPRING_DATASOURCE_URL: jdbc:mysql://cardsdb:3306/cardsdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver-ms:8070/eureka/
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://localhost:9000/actuator/health/readiness | grep UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+  accounts:
+    image: "ranjeetjena06/accounts:v6"
+    container_name: accounts-ms
+    # ports:
+    #   - "8080:8080"
+    command: /bin/sh -c "sleep 40 && java -jar accounts.jar"
+    depends_on:
+      redis:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+    environment:
+      <<: *base-env
+      SPRING_APPLICATION_NAME: "accounts"
+      SPRING_DATASOURCE_URL: jdbc:mysql://accountsdb:3306/accountsdb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver-ms:8070/eureka/
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://localhost:8080/actuator/health/readiness | grep UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+  gatewayserver:
+    image: "ranjeetjena06/gatewayserver:v3"
+    container_name: gatewayserver-ms
+    ports:
+      - "8072:8072"
+    depends_on:
+      accounts:
+        condition: service_healthy
+      cards:
+        condition: service_healthy
+      loans:
+        condition: service_healthy
+    environment:
+      <<: *base-env
+      SPRING_APPLICATION_NAME: "gatewayserver"
+      SPRING_CLOUD_DISCOVERY_LOCATOR_ENABLED: "false"
+      SPRING_RABBITMQ_USERNAME: "guest"
+      SPRING_RABBITMQ_PASSWORD: "guest"
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver-ms:8070/eureka/
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET_URI: "http://keycloak:8080/realms/learn/protocol/openid-connect/certs"
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://localhost:8083/actuator/health/readiness | grep UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 500m
+    networks:
+      - learn
+
+networks:
+  learn:
+    driver: bridge
