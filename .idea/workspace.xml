@@ -4,41 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/java/com/learn/cards/controller/CardsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/java/com/learn/cards/controller/CardsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/learn/gatewayserver/GatewayserverApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/learn/gatewayserver/GatewayserverApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/learn/gatewayserver/config/KeycloakRoleConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/learn/gatewayserver/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/learn/gatewayserver/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/java/com/learn/gatewayserver/filters/FilterUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/java/com/learn/gatewayserver/filters/FilterUtility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application-prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application-prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/src/main/java/com/learn/message/MessageApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/src/main/java/com/learn/message/dto/AccountMsgDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/src/main/java/com/learn/message/functions/MessageFunction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/message/src/test/java/com/learn/message/MessageApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/dev/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/dev/docker-compose.yml" afterDir="false" />
-    </list>
+    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Add annotation processing profile for accounts and update module configuration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -156,11 +122,42 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748360943636</updated>
-      <workItem from="1748360947624" duration="2458000" />
+      <workItem from="1748360947624" duration="2825000" />
     </task>
+    <task id="LOCAL-00001" summary="Refactor application configuration to use H2 in-memory database and remove unused services">
+      <option name="closed" value="true" />
+      <created>1748363522369</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748363522369</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update Docker image tag to use 'd1' instead of 'v6' in pom.xml">
+      <option name="closed" value="true" />
+      <created>1748363712523</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748363712523</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add annotation processing profile for accounts and update module configuration">
+      <option name="closed" value="true" />
+      <created>1748363785581</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748363785581</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactor application configuration to use H2 in-memory database and remove unused services" />
+    <MESSAGE value="Update Docker image tag to use 'd1' instead of 'v6' in pom.xml" />
+    <MESSAGE value="Add annotation processing profile for accounts and update module configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add annotation processing profile for accounts and update module configuration" />
   </component>
 </project>
