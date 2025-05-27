@@ -6,9 +6,10 @@ spring:
     name: loans
   # ---- DataSource / JPA ----
   datasource:
-    url: jdbc:mysql://localhost:3306/loansdb
-    username: root
-    password: root
+    url: jdbc:h2:mem:loansdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
 
   sql:
     init:
@@ -16,6 +17,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    database-platform: org.hibernate.dialect.H2Dialect
 
   # ---- Config Server ----
   config:

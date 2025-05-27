@@ -6,22 +6,6 @@ x-base-env: &base-env
   SPRING_CLOUD_CONFIG_URI: "http://configserver-ms:8071/"
 
 services:
-  keycloak:
-    image: quay.io/keycloak/keycloak:26.2.2
-    container_name: keycloak
-    command: start-dev
-    ports:
-      - "7080:8080"
-    environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-    deploy:  
-      resources:
-        limits:
-          memory: 512m
-    networks:
-      - learn
-
   rabbit:
     image: rabbitmq:4.0-management
     container_name: rabbit
@@ -42,90 +26,6 @@ services:
     networks:
       - learn
 
-  redis:
-    image: redis:latest
-    container_name: redis
-    ports:
-      - "6379:6379"
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 5s
-    deploy:
-      resources:
-        limits:
-          memory: 256m
-    networks:
-      - learn
-
-  loansdb:
-    image: mysql:latest
-    container_name: loansdb
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: loansdb
-    ports:
-      - "3306:3306"
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
-    deploy:
-      resources:
-        limits:
-          memory: 512m
-    networks:
-      - learn
-
-  cardsdb:
-    image: mysql:latest
-    container_name: cardsdb
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: cardsdb
-    ports:
-      - "3307:3306"
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
-    deploy:
-      resources:
-        limits:
-          memory: 512m
-    networks:
-      - learn
-
-  accountsdb:
-    image: mysql:latest
-    container_name: accountsdb
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: accountsdb
-    ports:
-      - "3308:3306"
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 10s
-    deploy:
-      resources:
-        limits:
-          memory: 512m
-    networks:
-      - learn
-
   configserver:
     image: "ranjeetjena06/configserver:v2"
     container_name: configserver-ms
@@ -133,12 +33,6 @@ services:
       - "8071:8071"
     depends_on:
       rabbit:
-        condition: service_healthy
-      loansdb:
-        condition: service_healthy
-      cardsdb:
-        condition: service_healthy
-      accountsdb:
         condition: service_healthy
     healthcheck:
       test: ["CMD-SHELL", "curl --fail --silent http://localhost:8071/actuator/health/readiness | grep UP || exit 1"]

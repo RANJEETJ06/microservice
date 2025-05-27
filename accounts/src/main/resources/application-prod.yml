@@ -9,9 +9,10 @@ spring:
 
   # ---- DataSource / JPA ----
   datasource:
-    url: jdbc:mysql://localhost:3308/accountsdb
-    username: root
-    password: root
+    url: jdbc:h2:mem:accountsdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ''
   sql:
     init:
       mode: always
@@ -19,6 +20,7 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
 
   # ---- Config Server ----
   config:
@@ -30,19 +32,6 @@ spring:
     port: 5672
     username: guest
     password: guest
-  cloud:
-    openfeign:
-      circuitbreaker:
-        enabled: true
-    function:
-      definition: updateCommunication
-      stream:
-        bindings:
-          updateCommunication-in-0:
-            destination: communication-sent
-            group: accounts
-          sendCommunication-out-0:
-            destination: send-communication
 
 management:
   endpoints:
@@ -85,11 +74,3 @@ logging:
     com:
       learn:
         accounts: DEBUG
-resilience4j.circuitbreaker:
-  configs:
-    default:
-      sliding-window-size: 10
-      permitted-number-of-calls-in-half-open-state: 2
-      failure-rate-threshold: 50
-      wait-duration-in-open-state:
-        seconds: 10
