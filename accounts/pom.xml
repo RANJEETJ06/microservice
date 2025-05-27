@@ -126,7 +126,7 @@
                 <version>3.4.5</version>
                 <configuration>
                     <to>
-                        <image>ranjeetjena06/${project.artifactId}:v6</image>
+                        <image>ranjeetjena06/${project.artifactId}:d1</image>
                     </to>
                 </configuration>
             </plugin>
