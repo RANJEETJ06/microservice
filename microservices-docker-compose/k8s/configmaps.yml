@@ -4,11 +4,17 @@ metadata:
   name: learn-configmap
 data:
   SPRING_PROFILES_ACTIVE: "prod"
-  SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
-  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:8070/eureka/"
+  SPRING_CONFIG_IMPORT: "configserver:http://configserver-ms:8071/"
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver-ms:8070/eureka/"
   CONFIGSERVER_APPLICATION_NAME: "configserver"
   EUREKA_APPLICATION_NAME: "eurekaserver"
   ACCOUNTS_APPLICATION_NAME: "accounts"
   LOANS_APPLICATION_NAME: "loans"
   CARDS_APPLICATION_NAME: "cards"
   GATEWAY_APPLICATION_NAME: "gatewayserver"
+
+  # Add RabbitMQ configuration below:
+  SPRING_RABBITMQ_HOST: "rabbitmq"
+  SPRING_RABBITMQ_PORT: "5672"
+  SPRING_RABBITMQ_USERNAME: "guest"    # or your username
+  SPRING_RABBITMQ_PASSWORD: "guest"    # or your password

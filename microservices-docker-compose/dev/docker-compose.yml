@@ -135,36 +135,36 @@ services:
   #   networks:
   #     - learn
 
-#   accounts:
-#     image: "ranjeetjena06/accounts:v6"
-#     container_name: accounts-ms
-#     # ports:
-#     #   - "8080:8080"
-#     command: /bin/sh -c "sleep 40 && java -jar accounts.jar"
-#     depends_on:
-#       redis:
-#         condition: service_healthy
-#       eurekaserver:
-#         condition: service_healthy
-#     environment:
-#       <<: *base-env
-#       SPRING_APPLICATION_NAME: "accounts"
-#       SPRING_DATASOURCE_URL: jdbc:mysql://accountsdb:3306/accountsdb
-#       SPRING_DATASOURCE_USERNAME: root
-#       SPRING_DATASOURCE_PASSWORD: root
-#       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver-ms:8070/eureka/
-#     healthcheck:
-#       test: ["CMD-SHELL", "curl --fail --silent http://localhost:8080/actuator/health/readiness | grep UP || exit 1"]
-#       interval: 10s
-#       timeout: 5s
-#       retries: 10
-#       start_period: 10s
-#     deploy:
-#       resources:
-#         limits:
-#           memory: 512m
-#     networks:
-#       - learn
+  accounts:
+    image: "ranjeetjena06/accounts:d1"
+    container_name: accounts-ms
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    environment:
+      <<: *base-env
+      SPRING_APPLICATION_NAME: "accounts"
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:accountsdb
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: org.h2.Driver
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: ""
+      SPRING_H2_CONSOLE_ENABLED: "true"
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.H2Dialect
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver-ms:8070/eureka/
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail --silent http://localhost:8080/actuator/health/readiness | grep UP || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    networks:
+      - learn
+
+
 
 #   gatewayserver:
 #     image: "ranjeetjena06/gatewayserver:v3"

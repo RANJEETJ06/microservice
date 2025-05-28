@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Add annotation processing profile for accounts and update module configuration">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Update annotation processing profile for accounts and adjust module configuration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/dev/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/dev/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/k8s/configmaps.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/k8s/configmaps.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/k8s/configserver.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/k8s/configserver.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +128,8 @@
       <option name="presentableId" value="Default" />
       <updated>1748360943636</updated>
       <workItem from="1748360947624" duration="3093000" />
-      <workItem from="1748423501297" duration="3781000" />
+      <workItem from="1748423501297" duration="4870000" />
+      <workItem from="1748447606352" duration="3302000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor application configuration to use H2 in-memory database and remove unused services">
       <option name="closed" value="true" />
@@ -160,7 +163,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748363988217</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update annotation processing profile for accounts and adjust module configuration">
+      <option name="closed" value="true" />
+      <created>1748429860298</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1748429860298</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +181,7 @@
     <MESSAGE value="Refactor application configuration to use H2 in-memory database and remove unused services" />
     <MESSAGE value="Update Docker image tag to use 'd1' instead of 'v6' in pom.xml" />
     <MESSAGE value="Add annotation processing profile for accounts and update module configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add annotation processing profile for accounts and update module configuration" />
+    <MESSAGE value="Update annotation processing profile for accounts and adjust module configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update annotation processing profile for accounts and adjust module configuration" />
   </component>
 </project>
