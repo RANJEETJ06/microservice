@@ -20,12 +20,11 @@ spring:
     port: 5672
     username: "guest"
     password: "guest"
-
   sql:
     init:
       mode: always
   profiles:
-    active: dev
+    active: default
 
 management:
   endpoints:

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Update annotation processing profile for accounts and adjust module configuration">
+    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Update configuration for RabbitMQ and adjust service names in Docker setup and still gateway.yml is unfinished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/dev/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/dev/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/k8s/configmaps.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/k8s/configmaps.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/k8s/configserver.yml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/k8s/configserver.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +53,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.AccountsApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
     &quot;Spring Boot.LoansApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -77,7 +79,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.GatewayserverApplication">
+  <component name="RunManager" selected="Spring Boot.CardsApplication">
     <configuration name="AccountsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="accounts" />
@@ -90,6 +92,32 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="cards" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.cards.CardsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="configserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.configServer.ConfigServerApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.configServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaserverApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="eurekaserver" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.learn.eurekaserver.EurekaserverApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.learn.eurekaserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -110,6 +138,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.EurekaserverApplication" />
+        <item itemvalue="Spring Boot.ConfigServerApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -129,7 +163,9 @@
       <updated>1748360943636</updated>
       <workItem from="1748360947624" duration="3093000" />
       <workItem from="1748423501297" duration="4870000" />
-      <workItem from="1748447606352" duration="3302000" />
+      <workItem from="1748447606352" duration="3640000" />
+      <workItem from="1748535404758" duration="2713000" />
+      <workItem from="1748538532546" duration="601000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor application configuration to use H2 in-memory database and remove unused services">
       <option name="closed" value="true" />
@@ -171,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748429860298</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Update configuration for RabbitMQ and adjust service names in Docker setup and still gateway.yml is unfinished">
+      <option name="closed" value="true" />
+      <created>1748456965010</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1748456965010</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,6 +226,7 @@
     <MESSAGE value="Update Docker image tag to use 'd1' instead of 'v6' in pom.xml" />
     <MESSAGE value="Add annotation processing profile for accounts and update module configuration" />
     <MESSAGE value="Update annotation processing profile for accounts and adjust module configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update annotation processing profile for accounts and adjust module configuration" />
+    <MESSAGE value="Update configuration for RabbitMQ and adjust service names in Docker setup and still gateway.yml is unfinished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update configuration for RabbitMQ and adjust service names in Docker setup and still gateway.yml is unfinished" />
   </component>
 </project>

@@ -24,7 +24,7 @@ spring:
     init:
       mode: always
   profiles:
-    active: dev
+    active: default
 
 management:
   endpoints:
