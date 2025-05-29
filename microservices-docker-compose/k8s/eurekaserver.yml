@@ -59,7 +59,7 @@ metadata:
 spec:
   selector:
     app: eurekaserver
-  type: LoadBalancer
+  type: NodePort
   ports:
     - protocol: TCP
       port: 8070
