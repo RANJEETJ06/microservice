@@ -1,0 +1,24 @@
+dependencies:
+- name: learn-common
+  repository: file://../../learn-common
+  version: 0.1.0
+- name: configserver
+  repository: file://../../learn-services/configserver
+  version: 0.1.0
+- name: eurekaserver
+  repository: file://../../learn-services/eurekaserver
+  version: 0.1.0
+- name: accounts
+  repository: file://../../learn-services/accounts
+  version: 0.1.0
+- name: cards
+  repository: file://../../learn-services/cards
+  version: 0.1.0
+- name: loans
+  repository: file://../../learn-services/loans
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../learn-services/gatewayserver
+  version: 0.1.0
+digest: sha256:693d29e62b7a4aa05e0a8d359de6029ede3beb0977b2c57ca510bcbb608e3508
+generated: "2025-05-30T16:46:16.1303444+05:30"
