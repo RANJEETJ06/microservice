@@ -10,14 +10,14 @@ replicaCount: 1
 
 image:
   repository: ranjeetjena06/gatewayserver
-  tag: v1
+  tag: d1
 
-containerPort: 8072
+containerPort: 8070
 
 service:
   type: LoadBalancer
-  port: 8072
-  targetPort: 8072
+  port: 8070
+  targetPort: 8070
 
 appname_enabled: true
 profile_enabled: true

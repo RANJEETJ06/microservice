@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort">
+    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Update workspace configuration to change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,6 +164,7 @@
       <workItem from="1748535404758" duration="2713000" />
       <workItem from="1748538532546" duration="3986000" />
       <workItem from="1748583820377" duration="6000" />
+      <workItem from="1748598984830" duration="698000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor application configuration to use H2 in-memory database and remove unused services">
       <option name="closed" value="true" />
@@ -237,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748541532934</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update workspace configuration to change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort">
+      <option name="closed" value="true" />
+      <created>1748603854008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1748603854009</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +261,7 @@
     <MESSAGE value="Refactor application.yml to set active profile to default and update workspace configuration for new services" />
     <MESSAGE value="Refactor workspace configuration to set active profile to default and update run manager settings" />
     <MESSAGE value="Change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort" />
+    <MESSAGE value="Update workspace configuration to change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update workspace configuration to change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort" />
   </component>
 </project>
