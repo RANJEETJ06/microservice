@@ -1,8 +1,8 @@
 global:
-  configMapName: eazybankdev-configmap
+  configMapName: learn-configmap
   activeProfile: default
-  configServerURL: configserver:http://configserver:8071/
-  eurekaServerURL: http://eurekaserver:8070/eureka/
+  configServerURL: configserver:http://configserver-ms:8071/
+  eurekaServerURL: http://eurekaserver-ms:8070/eureka/
   rabbitmqHost: rabbitmq.default.svc.cluster.local
   rabbitmqPort: 5672
   rabbitmqUsername: guest

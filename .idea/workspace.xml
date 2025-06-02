@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Update workspace configuration to rename gateway to gatewayserver, adjust container port to 8070, and modify service type settings not done yet the rabbit" />
+    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Update workspace configuration to rename gateway to gatewayserver, adjust container port to 8070, and modify service type settings">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/Chart.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/accounts-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/accounts-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/cards-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/cards-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/configserver-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/configserver-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/eurekaserver-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/eurekaserver-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/gatewayserver-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/gatewayserver-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/learn-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/learn-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/loans-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/loans-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/Chart.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/charts/learn-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/charts/learn-common-0.1.0.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/Chart.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/values.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/rabbitmq/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/rabbitmq/Chart.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/rabbitmq/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/rabbitmq/values.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,34 +55,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AccountsApplication.executor": "Run",
-    "Spring Boot.CardsApplication.executor": "Run",
-    "Spring Boot.ConfigServerApplication.executor": "Run",
-    "Spring Boot.EurekaserverApplication.executor": "Run",
-    "Spring Boot.GatewayserverApplication.executor": "Run",
-    "Spring Boot.LoansApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AccountsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.CardsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.GatewayserverApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.LoansApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.poratu.idea.plugins.tomcat.setting.TomcatServersConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -164,7 +181,9 @@
       <workItem from="1748538532546" duration="3986000" />
       <workItem from="1748583820377" duration="6000" />
       <workItem from="1748598984830" duration="698000" />
-      <workItem from="1748784874160" duration="447000" />
+      <workItem from="1748784874160" duration="740000" />
+      <workItem from="1748789223930" duration="885000" />
+      <workItem from="1748842940954" duration="1263000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor application configuration to use H2 in-memory database and remove unused services">
       <option name="closed" value="true" />
@@ -254,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748785319086</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Update workspace configuration to rename gateway to gatewayserver, adjust container port to 8070, and modify service type settings">
+      <option name="closed" value="true" />
+      <created>1748785519047</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1748785519047</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +298,7 @@
     <MESSAGE value="Change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort" />
     <MESSAGE value="Update workspace configuration to change service type from LoadBalancer to ClusterIP for accounts, cards, loans, and configserver; update eurekaserver to NodePort" />
     <MESSAGE value="Update workspace configuration to rename gateway to gatewayserver, adjust container port to 8070, and modify service type settings not done yet the rabbit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workspace configuration to rename gateway to gatewayserver, adjust container port to 8070, and modify service type settings not done yet the rabbit" />
+    <MESSAGE value="Update workspace configuration to rename gateway to gatewayserver, adjust container port to 8070, and modify service type settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update workspace configuration to rename gateway to gatewayserver, adjust container port to 8070, and modify service type settings" />
   </component>
 </project>

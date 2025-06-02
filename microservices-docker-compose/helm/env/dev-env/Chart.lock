@@ -21,4 +21,4 @@ dependencies:
   repository: file://../../learn-services/gatewayserver
   version: 0.1.0
 digest: sha256:693d29e62b7a4aa05e0a8d359de6029ede3beb0977b2c57ca510bcbb608e3508
-generated: "2025-06-01T17:52:41.9080509+05:30"
+generated: "2025-06-02T12:31:28.5950039+05:30"

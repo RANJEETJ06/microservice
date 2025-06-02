@@ -2,7 +2,7 @@
 # Declare variables to be passed into your templates.
 
 deploymentName: eurekaserver-deployment
-serviceName: eurekaserver
+serviceName: eurekaserver-ms
 appLabel: eurekaserver
 appName: eurekaserver
 
