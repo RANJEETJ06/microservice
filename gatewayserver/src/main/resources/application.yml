@@ -2,32 +2,36 @@ spring:
   application:
     name: gatewayserver
   config:
-    import: "configserver:http://localhost:8071/"
+    import: "configserver:http://configserver-ms:8071/"
   rabbitmq:
-    host: "localhost"
+    host: rabbit
     port: 5672
-    username: "guest"
-    password: "guest"
+    username: guest
+    password: guest
   cloud:
-    gateway:
+    kubernetes:
       discovery:
-        locator:
+        all-namespaces: true
+        enabled: true
+    discovery:
+      client:
+        health-indicator:
           enabled: false
-          lower-case-service-id: true
+    gateway:
       httpclient:
         connect-timeout: 10000
         response-timeout: 3s
   data:
     redis:
       connect-timeout: 2s
-      host: localhost
+      host: redis
       port: 6379
       timeout: 1s
   security:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: "http://localhost:7080/realms/master/protocol/openid-connect/certs"
+          jwk-set-uri: "http://keycloak:8080/realms/master/protocol/openid-connect/certs"
 
 management:
   endpoints:
@@ -46,11 +50,13 @@ info:
     description: "Microservices gateway"
     version: "1.0.0"
 
+#optional
 logging:
   level:
     com:
       learn:
         gatewayserver: DEBUG
+
 resilience4j.circuitbreaker:
   configs:
     default:

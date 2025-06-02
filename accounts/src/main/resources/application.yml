@@ -1,6 +1,13 @@
 server:
   port: 8080
+
 spring:
+  application:
+    name: accounts
+  profiles:
+    active: prod
+
+  # ---- DataSource / JPA ----
   datasource:
     url: jdbc:h2:mem:accountsdb
     driver-class-name: org.h2.Driver
@@ -12,19 +19,24 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+    show-sql: true
     database-platform: org.hibernate.dialect.H2Dialect
-  #    show-sql: true
-  application:
-    name: "accounts"
+
+  # ---- Config Server ----
   config:
-    import: "configserver:http://localhost:8071/"
+    import: "configserver:http://configserver-ms:8071/"
+
+  # ---- RabbitMQ ----
   rabbitmq:
-    host: "localhost"
+    host: rabbit
     port: 5672
-    username: "guest"
-    password: "guest"
-  profiles:
-    active: dev
+    username: guest
+    password: guest
+  cloud:
+    kubernetes:
+      discovery:
+        all-namespaces: true
+
 management:
   endpoints:
     web:
@@ -33,25 +45,24 @@ management:
   info:
     env:
       enabled: true
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
   endpoint:
     shutdown:
       access: unrestricted
-
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://localhost:8070/eureka/
-    fetch-registry: true
-    register-with-eureka: true
+    health:
+      probes:
+        enabled: true
 
 info:
   app:
     name: "accounts"
     description: "learn API for accounts"
     version: "1.1.0"
-
+#optional
 logging:
   level:
     com:

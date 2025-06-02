@@ -88,7 +88,7 @@
         <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-kubernetes-discoveryclient</artifactId>
         </dependency>
     </dependencies>
     <dependencyManagement>
@@ -110,7 +110,7 @@
                 <version>3.4.5</version>
                 <configuration>
                     <to>
-                        <image>ranjeetjena06/${project.artifactId}:d1</image>
+                        <image>ranjeetjena06/${project.artifactId}:d2</image>
                     </to>
                 </configuration>
             </plugin>

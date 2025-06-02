@@ -1,30 +1,41 @@
 server:
   port: 8090
+
 spring:
+  application:
+    name: loans
+  # ---- DataSource / JPA ----
   datasource:
     url: jdbc:h2:mem:loansdb
     driver-class-name: org.h2.Driver
     username: sa
     password: ''
+
+  sql:
+    init:
+      mode: always
   jpa:
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.H2Dialect
-#    show-sql: true
+
+  # ---- Config Server ----
   config:
-    import: "configserver:http://localhost:8071/"
-  application:
-    name: "loans"
+    import: "configserver:http://configserver-ms:8071/"
+
+  # ---- RabbitMQ ----
   rabbitmq:
-    host: "localhost"
+    host: rabbit
     port: 5672
-    username: "guest"
-    password: "guest"
-  sql:
-    init:
-      mode: always
+    username: guest
+    password: guest
+
   profiles:
-    active: default
+    active: "prod"
+  cloud:
+    kubernetes:
+      discovery:
+        all-namespaces: true
 
 management:
   endpoints:
@@ -34,25 +45,24 @@ management:
   info:
     env:
       enabled: true
+  health:
+    readiness-state:
+      enabled: true
+    liveness-state:
+      enabled: true
   endpoint:
     shutdown:
       access: unrestricted
-
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://localhost:8070/eureka/
-    fetch-registry: true
-    register-with-eureka: true
+    health:
+      probes:
+        enabled: true
 
 info:
   app:
     name: "loans"
     description: "learn API for loans"
     version: "1.1.0"
-
+#optional
 logging:
   level:
     com:
