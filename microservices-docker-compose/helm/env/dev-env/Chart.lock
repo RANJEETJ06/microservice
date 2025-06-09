@@ -5,9 +5,6 @@ dependencies:
 - name: configserver
   repository: file://../../learn-services/configserver
   version: 0.1.0
-- name: eurekaserver
-  repository: file://../../learn-services/eurekaserver
-  version: 0.1.0
 - name: accounts
   repository: file://../../learn-services/accounts
   version: 0.1.0
@@ -20,5 +17,5 @@ dependencies:
 - name: gatewayserver
   repository: file://../../learn-services/gatewayserver
   version: 0.1.0
-digest: sha256:693d29e62b7a4aa05e0a8d359de6029ede3beb0977b2c57ca510bcbb608e3508
-generated: "2025-06-02T12:31:28.5950039+05:30"
+digest: sha256:4c6f553a09fff2d9486a7ce5ee275df444924c289a00d4214de938bee987f84b
+generated: "2025-06-10T01:19:48.8714227+05:30"

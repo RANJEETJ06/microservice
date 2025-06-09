@@ -10,7 +10,7 @@ replicaCount: 1
 
 image:
   repository: ranjeetjena06/gatewayserver
-  tag: d1
+  tag: d2
 
 containerPort: 8072
 

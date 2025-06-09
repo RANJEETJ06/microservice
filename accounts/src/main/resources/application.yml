@@ -35,6 +35,7 @@ spring:
   cloud:
     kubernetes:
       discovery:
+        discovery-server-url: https://kubernetes.default.svc
         all-namespaces: true
 
 management:

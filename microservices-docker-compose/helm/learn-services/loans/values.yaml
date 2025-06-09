@@ -10,7 +10,7 @@ replicaCount: 1
 
 image:
   repository: ranjeetjena06/loans
-  tag: d1
+  tag: d2
 
 containerPort: 8090
 

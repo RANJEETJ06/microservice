@@ -36,6 +36,7 @@ spring:
     kubernetes:
       discovery:
         all-namespaces: true
+        discovery-server-url: https://kubernetes.default.svc
 
 management:
   endpoints:

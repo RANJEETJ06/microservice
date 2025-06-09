@@ -13,6 +13,7 @@ spring:
       discovery:
         all-namespaces: true
         enabled: true
+        discovery-server-url: https://kubernetes.default.svc
     discovery:
       client:
         health-indicator:
