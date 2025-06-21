@@ -4,42 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Update workspace configuration to enable Kubernetes discovery client, adjust service URLs for config server, and modify application properties for accounts, cards, and loans services">
+    <list default="true" id="d57c2615-e974-4fc8-86c4-c1c184203bf5" name="Changes" comment="Update workspace configuration to enable Kubernetes discovery client and set discovery server URL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cards/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/cards/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loans/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/loans/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/Chart.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/Chart.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/Chart.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/accounts-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/accounts-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/cards-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/cards-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/configserver-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/configserver-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/eurekaserver-0.1.0.tgz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/gatewayserver-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/gatewayserver-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/learn-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/learn-common-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/loans-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/env/dev-env/charts/loans-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/accounts/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/accounts/Chart.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/accounts/charts/learn-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/accounts/charts/learn-common-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/accounts/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/accounts/values.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/cards/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/cards/Chart.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/cards/charts/learn-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/cards/charts/learn-common-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/cards/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/cards/values.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/Chart.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/charts/learn-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/configserver/charts/learn-common-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/.helmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/Chart.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/Chart.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/charts/learn-common-0.1.0.tgz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/templates/deployment.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/templates/service.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/eurekaserver/values.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/gatewayserver/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/gatewayserver/Chart.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/gatewayserver/charts/learn-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/gatewayserver/charts/learn-common-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/gatewayserver/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/gatewayserver/values.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/loans/Chart.lock" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/loans/Chart.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/loans/charts/learn-common-0.1.0.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/loans/charts/learn-common-0.1.0.tgz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/loans/values.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/microservices-docker-compose/helm/learn-services/loans/values.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +178,7 @@
       <workItem from="1748842940954" duration="2745000" />
       <workItem from="1748863390255" duration="1833000" />
       <workItem from="1749446634158" duration="18000" />
-      <workItem from="1749496888207" duration="3757000" />
+      <workItem from="1749496888207" duration="5281000" />
     </task>
     <task id="LOCAL-00001" summary="Refactor application configuration to use H2 in-memory database and remove unused services">
       <option name="closed" value="true" />
@@ -326,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748870250586</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Update workspace configuration to enable Kubernetes discovery client and set discovery server URL">
+      <option name="closed" value="true" />
+      <created>1749501267560</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1749501267560</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +320,7 @@
     <MESSAGE value="Update workspace configuration to rename gateway to gatewayserver, adjust container port to 8070, and modify service type settings" />
     <MESSAGE value="Update workspace configuration to rename configserver and eurekaserver to configserver-ms and eurekaserver-ms, adjust container port to 8072, and change service type to LoadBalancer" />
     <MESSAGE value="Update workspace configuration to enable Kubernetes discovery client, adjust service URLs for config server, and modify application properties for accounts, cards, and loans services" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update workspace configuration to enable Kubernetes discovery client, adjust service URLs for config server, and modify application properties for accounts, cards, and loans services" />
+    <MESSAGE value="Update workspace configuration to enable Kubernetes discovery client and set discovery server URL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update workspace configuration to enable Kubernetes discovery client and set discovery server URL" />
   </component>
 </project>
