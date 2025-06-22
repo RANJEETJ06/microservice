@@ -4,24 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.4</version> <!-- Use the same version as in Cards -->
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+     <parent>
+		<groupId>com.learn</groupId>
+		<artifactId>learn-bom</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../learn-bom/pom.xml</relativePath>
+	</parent>
 
-    <groupId>com.learn</groupId>
     <artifactId>accounts</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>accounts</name>
     <description>Microservice for Accounts</description>
-
-    <properties>
-        <java.version>17</java.version>
-        <spring-cloud.version>2024.0.1</spring-cloud.version>
-    </properties>
 
     <dependencies>
         <!-- Spring Boot Dependencies -->
@@ -42,14 +36,14 @@
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <version>3.4.0</version> <!-- Same version as Cards -->
+            <artifactId>spring-boot-devtools</artifactId> <!-- Same version as Cards -->
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>com.h2database</groupId>
+            <version>${h2.version}</version>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
@@ -69,12 +63,13 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+            <version>${lombok.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-            <version>2.8.6</version> <!-- Same version as in Accounts -->
+            <version>${spring-doc.version}</version>
         </dependency>
 
         <dependency>
@@ -123,7 +118,7 @@
             <plugin>
                 <groupId>com.google.cloud.tools</groupId>
                 <artifactId>jib-maven-plugin</artifactId>
-                <version>3.4.5</version>
+                <version>${jib.version}</version>
                 <configuration>
                     <to>
                         <image>ranjeetjena06/${project.artifactId}:d1</image>

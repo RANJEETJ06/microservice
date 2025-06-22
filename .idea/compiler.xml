@@ -16,7 +16,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
         </processorPath>
         <module name="loans" />
         <module name="cards" />
@@ -26,13 +26,13 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="accounts" options="-parameters" />
-      <module name="cards" options="-parameters" />
-      <module name="configserver" options="-parameters" />
-      <module name="eurekaserver" options="-parameters" />
-      <module name="gatewayserver" options="-parameters" />
+      <module name="accounts" options="" />
+      <module name="cards" options="" />
+      <module name="configserver" options="" />
+      <module name="eurekaserver" options="" />
+      <module name="gatewayserver" options="" />
       <module name="learn-bom" options="" />
-      <module name="loans" options="-parameters" />
+      <module name="loans" options="" />
     </option>
   </component>
 </project>

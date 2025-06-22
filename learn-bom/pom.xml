@@ -30,8 +30,7 @@
         <spring-doc.version>2.5.0</spring-doc.version> <!-- Compatible with Spring Boot 3.4.x, use 2.5.0+ instead of 2.8.x which is for 3.2 -->
         <h2.version>2.2.224</h2.version> <!-- Stable version; 2.3.232 is newer but known for breaking changes -->
         <lombok.version>1.18.30</lombok.version> <!-- Recent stable version with the best IDE support -->
-        <jib.version>3.4.5</jib.version> <!-- You’re already using this in your plugin, keep consistent -->
-        <image.tag>s20</image.tag> <!-- Custom tag – no correction needed -->
+        <jib.version>3.4.5</jib.version>  <!-- Custom tag – no correction needed -->
     </properties>
 
     <dependencies>
